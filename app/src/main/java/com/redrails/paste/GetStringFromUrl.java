@@ -1,12 +1,15 @@
 package com.redrails.paste;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -78,7 +81,7 @@ class GetStringFromUrl extends AsyncTask<String, Void, String> {
             ab.setTitle("Your paste has been pushed!");
             ab.setMessage(URLValues.URLPREFIX + result);
 
-            ab.setPositiveButton("View", new DialogInterface.OnClickListener() {
+            ab.setPositiveButton("View in browser", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Uri uri = Uri.parse(URLValues.URLPREFIX + result);
@@ -87,7 +90,18 @@ class GetStringFromUrl extends AsyncTask<String, Void, String> {
                 }
             });
 
+            ab.setNeutralButton("Open", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    FragmentManager fm = ((Activity)usingContext).getFragmentManager();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("pasteToView", result);
+                    ViewPasteFragment vpf = new ViewPasteFragment();
+                    vpf.setArguments(bundle);
+                    fm.beginTransaction().replace(R.id.content_frame, vpf).commit();
+                }
+            });
         }
         ab.show();
-        }
+    }
 }
