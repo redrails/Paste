@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Paste</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="share_menu_text">Share</string>
+    <string name="paste_list_file">listOfPastes</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

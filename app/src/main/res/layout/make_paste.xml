@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Send a paste"
+        android:id="@+id/textView3"
+        android:layout_weight="0.04"
+        android:textSize="46dp"
+        android:textAlignment="center"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:inputType="textMultiLine"
+    android:lines="20"
+    android:minLines="6"
+    android:gravity="top|left"
+    android:maxLines="10"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:scrollbars="vertical"
+    android:layout_weight="0.73"
+    android:background="@drawable/textarea_border"
+        android:id="@+id/pasteContentSend" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paste as markdown"
+        android:id="@+id/markDownStatus"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.08"
+        android:checked="false"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Paste"
+        android:id="@+id/sendPaste"
+        android:layout_weight="0.04" />
+
+</LinearLayout>
