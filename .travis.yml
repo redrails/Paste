@@ -17,3 +17,6 @@ jdk:
 
 script: 
   - gradlew build
+  
+notifications:
+  email: false
