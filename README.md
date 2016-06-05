@@ -9,6 +9,11 @@ Changelog
 
 ---
 ```
+Paste - V1.6 - 05/06/2016
+  - Major efficiency improvements, no more freezing on the main page
+  - Fixed layout edging
+  - Better code improvements
+  
 Paste - V1.5 - 01/06/2016
   - Pastes can be viewed inside app after being posted
   - More code changes and better standards, still needs a lot of improvement (code is messy)
