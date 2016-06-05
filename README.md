@@ -9,6 +9,13 @@ Changelog
 
 ---
 ```
+Paste - V1.5 - 01/06/2016
+  - Pastes can be viewed inside app after being posted
+  - More code changes and better standards, still needs a lot of improvement (code is messy)
+        
+Paste - V1.4 - 01/06/2016
+  - Changes made to support new release of web paste, syntax highlighting now available on the platform
+  
 Paste - V1.3 - 01/06/2016
   - Changes made to support new release of web paste, syntax highlighting now available on the platform
         - Bug: overload on main thread in the main screen fragment, this should be fixed soon
