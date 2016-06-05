@@ -39,7 +39,6 @@ import java.util.List;
  */
 public class MainFrame extends Fragment {
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,21 +46,12 @@ public class MainFrame extends Fragment {
         View mainView = inflater.inflate(R.layout.mainframe, container, false);
 
 
-        TextView pasteCount = (TextView)mainView.findViewById(R.id.pasteCountTextView);
-        String r = "";
-        try {
-           r = new GetPasteCount().execute().get().toString();
-        } catch (Exception e){
-
-        }
-        pasteCount.setText(r);
-
         TinyDB tdb = new TinyDB(getActivity());
         List<String> pasteLists = tdb.getListString("myPastes");
 
-        final ListView listPastes = (ListView)mainView.findViewById(R.id.listView);
+        final ListView listPastes = (ListView) mainView.findViewById(R.id.listView);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, pasteLists);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, pasteLists);
         listPastes.setAdapter(adapter);
 
         listPastes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,43 +67,18 @@ public class MainFrame extends Fragment {
             }
         });
 
+        setPasteCount();
+
         return mainView;
 
     }
 
+    public void setPasteCount(){
+        try {
+            new GetPasteCount(getActivity()).execute();
+        } catch (Exception e){
 
-    class GetPasteCount extends AsyncTask<String, Void, String> {
-
-        String result = "";
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
         }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            try {
-
-                URL url = new URL(URLValues.LASTPASTEURL);
-                URLConnection conn = url.openConnection();
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-                result = br.readLine();
-
-                return result;
-
-            } catch (Exception e) {
-                Log.e("Get Url", "Error in downloading: " + e.toString());
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(final String result) {
-            super.onPostExecute(result);
-        }
-
     }
+
 }

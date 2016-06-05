@@ -19,6 +19,7 @@ import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.List;
 
 class GetStringFromUrl extends AsyncTask<String, Void, String> {
 
@@ -68,13 +69,9 @@ class GetStringFromUrl extends AsyncTask<String, Void, String> {
             ab.setMessage("An error ocurred while pushing your paste!");
         } else {
 
-            ArrayList<String> current = tdb.getListString("myPastes");
-            ArrayList<String> newPasteList = new ArrayList<>();
-            for(String paste: current){
-                newPasteList.add(paste);
-            }
+            List<String> newPasteList = tdb.getListString("myPastes");
             newPasteList.add(result);
-            tdb.putListString("myPastes",newPasteList);
+            tdb.putListString("myPastes",(ArrayList<String>)newPasteList);
 
             TextView alertText = new TextView(usingContext);
             ab = new AlertDialog.Builder(usingContext);

@@ -40,10 +40,6 @@ import java.util.List;
  */
 public class MakePasteFragment extends Fragment {
 
-    private String data;
-    final static String TAG = "";
-    boolean post = false;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
