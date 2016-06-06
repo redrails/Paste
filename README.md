@@ -1,4 +1,9 @@
 # Paste
+============
+
+[![Build Status](https://travis-ci.org/redrails/Paste.svg?branch=master)](https://travis-ci.org/redrails/Paste)
+
+============
 
 A client to work with my [pastebin](http://ihtasham.com/paste/).
 
