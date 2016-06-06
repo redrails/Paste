@@ -20,6 +20,6 @@ before_install:
 
 jdk:
 - oraclejdk8
-
+ 
 script: 
   - ./gradlew assembleDebug
