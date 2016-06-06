@@ -1,4 +1,4 @@
-# Paste || [![Build Status](https://travis-ci.org/redrails/Paste.svg?branch=master)](https://travis-ci.org/redrails/Paste)
+# Paste - [![Build Status](https://travis-ci.org/redrails/Paste.svg?branch=master)](https://travis-ci.org/redrails/Paste)
 
 -----------
 
