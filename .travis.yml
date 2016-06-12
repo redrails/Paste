@@ -4,19 +4,22 @@ sudo: true
 
 android:
   components:
-  - tools
   - platform-tools
-  - build-tools-23.0.2
   - android-23
+  - tools
+  - build-tools-23.0.3
   - extra-android-m2repository
   - extra-google-m2repository
   - extra-google-google_play_services
 
-jdk:
-  - oraclejdk8
-
-script: 
-  - ./gradlew build
-  
 notifications:
   email: false
+
+before_install:
+  - chmod +x gradlew
+
+jdk:
+- oraclejdk8
+ 
+script: 
+  - ./gradlew assembleDebug
