@@ -79,7 +79,11 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+//            Intent intent = new Intent();
+//            intent.setClassName(this, "com.redrails.paste.SettingsActivity");
+//            this.startActivity(intent);
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);

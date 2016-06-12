@@ -32,6 +32,7 @@ class GetPasteCount extends AsyncTask<String, String, String> {
         try {
             URL url = new URL(URLValues.LASTPASTEURL);
             URLConnection conn = url.openConnection();
+            conn.setUseCaches(false);
             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
             result = br.readLine();

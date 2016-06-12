@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<PreferenceCategory-->
+        <!--android:title="Paste Preferences">-->
+
+        <!--<CheckBoxPreference-->
+            <!--android:key="checkBoxPref"-->
+            <!--android:title=""-->
+            <!--android:summary=""/>-->
+
+
+    <!--</PreferenceCategory>-->
+
+    <Preference android:title="About"
+        android:key="@string/settingsAbout"
+        android:summary="About this application"/>
+
+</PreferenceScreen>
