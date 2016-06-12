@@ -11,6 +11,10 @@ Changelog
 
 ---
 ```
+Paste - V1.7 - 12/06/2016
+  - Fixed caching issues with paste count on server
+  - Code improvements
+
 Paste - V1.6 - 05/06/2016
   - Major efficiency improvements, no more freezing on the main page
   - Fixed layout edging
