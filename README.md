@@ -11,6 +11,11 @@ Changelog
 
 ---
 ```
+Paste - V1.8 - 15/07/2016
+  - Cache issues were still causing issues, so now fixed
+  - View Paste share intent updated
+  - URL Values changed
+
 Paste - V1.7 - 12/06/2016
   - Fixed caching issues with paste count on server
   - Code improvements

@@ -132,8 +132,9 @@ public class ViewPasteFragment extends Fragment {
 
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "http://ihtasham.com/paste/pastes/"+current);
             sendIntent.setType("text/plain");
+            sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Sharing Paste: "+current);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "http://ihtasham.com/paste/pastes/"+current);
             startActivity(Intent.createChooser(sendIntent, "Sharing"));
          return true;
         }

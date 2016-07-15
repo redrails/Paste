@@ -10,6 +10,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Scanner;
+import java.util.UUID;
 
 /**
  * Created by toby on 04/06/16.
@@ -30,12 +32,11 @@ class GetPasteCount extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... params) {
         try {
+
             URL url = new URL(URLValues.LASTPASTEURL);
             URLConnection conn = url.openConnection();
-            conn.setUseCaches(false);
-            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-            result = br.readLine();
+            Scanner s = new Scanner(conn.getInputStream());
+            result = s.nextLine();
 
             return result;
 
