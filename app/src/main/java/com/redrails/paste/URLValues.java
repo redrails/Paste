@@ -12,10 +12,10 @@ public class URLValues {
 
     // To avoid caching of this number, we have to use this shitty way of handling the get
     // contents. It works.
-    public final static String LASTPASTEURL = "http://ihtasham.com/paste/last_paste.txt?id="+ UUID.randomUUID();
+    public final static String LASTPASTEURL = "https://ihtasham.com/paste/last_paste.txt?id="+ UUID.randomUUID();
 
-    public final static String POSTURL = "http://ihtasham.com/paste/index.php";
+    public final static String POSTURL = "https://ihtasham.com/paste/index.php";
 
-    public final static String URLPREFIX = "http://ihtasham.com/paste/pastes/";
+    public final static String URLPREFIX = "https://ihtasham.com/paste/pastes/";
 
 }
