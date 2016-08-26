@@ -11,6 +11,10 @@ Changelog
 
 ---
 ```
+Paste V1.9 - 26/08/2016
+  - Now using HTTPS
+  - Added URL schemes
+
 Paste - V1.8 - 15/07/2016
   - Cache issues were still causing issues, so now fixed
   - View Paste share intent updated
