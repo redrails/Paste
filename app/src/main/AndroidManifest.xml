@@ -27,6 +27,20 @@
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"
+                    android:host="ihtasham.com"
+                    android:pathPrefix="/paste/pastes/"/>
+                <data android:scheme="http"
+                    android:host="www.ihtasham.com"
+                    android:pathPrefix="/paste/pastes/" />
+                <data android:scheme="https"
+                    android:host="ihtasham.com"
+                    android:pathPrefix="/paste/pastes" />
+            </intent-filter>
 
             <activity
                 android:name="com.redrails.paste.SettingsFragment"

@@ -1,5 +1,6 @@
 package com.redrails.paste;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -13,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +38,11 @@ public class MainActivity extends AppCompatActivity
                 handleSendText(intent);
                 return;
             }
+        }
+        if(Intent.ACTION_VIEW.equals(intent.getAction())){
+            Intent i = new Intent(Intent.ACTION_VIEW, intent.getData());
+            handledSendLink(i);
+            return;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -127,6 +135,20 @@ public class MainActivity extends AppCompatActivity
             mp.setArguments(bundle);
             fm.beginTransaction().replace(R.id.content_frame, mp).commit();
             navigationView.setCheckedItem(R.id.paste_make);
+        }
+    }
+
+    private void handledSendLink(Intent intent){
+        String sharedUri = intent.getStringExtra(Intent.EXTRA_TEXT);
+        if(sharedUri != null){
+            FragmentManager fm = this.getFragmentManager();
+            System.out.println("sharedUri");
+            Bundle bundle = new Bundle();
+            bundle.putString("sharedLink", sharedUri);
+            ViewPasteFragment vpf = new ViewPasteFragment();
+            vpf.setArguments(bundle);
+            fm.beginTransaction().replace(R.id.content_frame, vpf).commit();
+            //navigationView.setCheckedItem(R.id.paste_view);
         }
     }
 

@@ -39,10 +39,11 @@ public class ViewPasteFragment extends Fragment {
         final TextView pasteIdHeader = (TextView) mainView.findViewById(R.id.pasteId);
         Bundle bundle = this.getArguments();
 
-
-
         try {
-            final String passedText = bundle.getString("pasteToView");
+            //final String passedText = (bundle.getString("pasteToView") == null ? "" : (bundle.getString("pasteToView")));
+            final String passedText = (bundle.getString("sharedLink")==null || bundle.getString("sharedLink").isEmpty()
+                                        ? bundle.getString("pasteToView") : bundle.getString("sharedLink"));
+            System.out.println(passedText);
             pasteContent.loadUrl("about:blank");
             pasteIdHeader.setText("");
             String urlConstructor = URLValues.URLPREFIX + passedText;
@@ -134,7 +135,7 @@ public class ViewPasteFragment extends Fragment {
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.setType("text/plain");
             sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Sharing Paste: "+current);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "http://ihtasham.com/paste/pastes/"+current);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "https://ihtasham.com/paste/pastes/"+current);
             startActivity(Intent.createChooser(sendIntent, "Sharing"));
          return true;
         }

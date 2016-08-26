@@ -44,7 +44,7 @@ class RetrieveFeedTask extends AsyncTask<String, Void, String>
     {
         try
         {
-            URL url = new URL(urls[0]); // enter your url here which to download
+            URL url = new URL(urls[0]); // enter your url here which to downloadView
 
             URLConnection conn = url.openConnection();
 
@@ -52,7 +52,7 @@ class RetrieveFeedTask extends AsyncTask<String, Void, String>
             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
             String inputLine;
-            for(int i = 0; i<15; i++){
+            for(int i = 0; i<10; i++){
                 HTML_response += br.readLine();
             }
             while ((inputLine = br.readLine()) != null)
